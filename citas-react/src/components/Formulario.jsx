@@ -1,4 +1,4 @@
-import {useState } from "react"
+import {useState, useEffect} from "react"
 
 function Formulario() {
   const [nombre, setNombre] = useState('')
@@ -7,7 +7,10 @@ function Formulario() {
   const [fecha, setFecha] = useState('')
   const [sintomas, setSintomas] = useState('')
 
-
+  useEffect(() => {
+    console.log('renderizado')
+    return(console.log('Desmontaje'))
+  }, [nombre])
 
   const handleSubmit = (e) =>{
     e.preventDefault()
@@ -52,7 +55,7 @@ function Formulario() {
             placeholder="Nombre del propietario" 
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md "
             value={propietario}
-            onChange={(e) => setPropietario(e.target.value)}
+            onChange={(e) => {setPropietario(e.target.value)}}
           />
         </div>
 
