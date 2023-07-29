@@ -1,5 +1,5 @@
 import {useState} from "react"
-import Error from "./Error.jsx"
+import Error from "./Error"
 
 // eslint-disable-next-line react/prop-types
 function Formulario({ pacientes, setPacientes }) {
