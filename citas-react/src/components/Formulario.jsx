@@ -1,5 +1,7 @@
 import {useState} from "react"
+import Error from "./Error.jsx"
 
+// eslint-disable-next-line react/prop-types
 function Formulario({ pacientes, setPacientes }) {
 
   const [nombre, setNombre] = useState('')
@@ -53,11 +55,10 @@ function Formulario({ pacientes, setPacientes }) {
 
     <form
       onSubmit={handleSubmit}    
-      className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 mx-5">
-        { error && ( <div className="bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-md" > 
-                        <p> Todos los campos son obligatorios </p>
-                     </div>   
-                     ) }
+      className="bg-white shadow-md rounded-lg py-10 px-5 mb-10 mx-5"
+    >
+
+      { error && <Error mensaje='Todos los campos son obligatorios'/>}
 
 
         <div className="mb-5">
