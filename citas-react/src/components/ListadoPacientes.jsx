@@ -19,8 +19,9 @@ function ListadoPacientes({pacientes}) {
     pacientes.map( paciente => (
         // eslint-disable-next-line react/jsx-key
         <Paciente
+            key={paciente.id}
             paciente={paciente}
-        />
+        /> 
       )
     )}
 
